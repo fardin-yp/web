@@ -55,10 +55,10 @@ const navbar = () => {
                     <li><img src={"/uploads/doc.png"} /><a href="/articles"> مقالات </a><hr /> </li>
                     <li><img src={"/uploads/contact.png"} /><a href="/contact-us"> تماس با ما </a><hr /> </li>
                 </ul>
-                <div className="nav-login">
+            </div>
+            <div className="nav-login">
                     <a href="/Auth/Login">ورود به پنل کاربری</a>
                 </div>
-            </div>
             
         </nav>
     )

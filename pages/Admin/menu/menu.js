@@ -18,15 +18,15 @@ const menu = () => {
                 <div>پروژه ها</div>
                 <Image width={30} height={20} src={left} alt="" />
             </li>
-            <li>          
+            <li onClick={() => setActive("sells")} style={active === "sells" ?{backgroundColor:"white"}:null}>          
                 <div>فروش ها</div>
                 <Image width={30} height={20} src={left} alt="" />
             </li>
-            <li>          
+            <li onClick={() => setActive("articles")} style={active === "articles" ?{backgroundColor:"white"}:null}>          
                 <div>مقالات</div>
                 <Image width={30} height={20} src={left} alt="" />
             </li>
-            <li>          
+            <li onClick={() => setActive("seo")} style={active === "seo" ?{backgroundColor:"white"}:null}>          
                 <div>سئو</div>
                 <Image width={30} height={20} src={left} alt="" />
             </li>

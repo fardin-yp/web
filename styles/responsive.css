@@ -1,8 +1,14 @@
-@media(max-width:630px){
+@media(max-width:729px){
     .nav-bot {
         width: 35%;
         align-items: center;
         justify-content: flex-end;
+    }
+    .header-title button {
+        margin-right: 0px;
+    }
+    .nav-login {
+        display: none;
     }
     .nav-bot ul {
         display: none;
@@ -56,10 +62,6 @@
     }
     .plans {
         flex-flow: column;
-    }
-
-    .plan-card {
-        width: 75%;
     }
 
     .web-left {
@@ -308,5 +310,98 @@
         width: 60%;
         padding: 2%;
     }
+    .plans a {
+        width: 100%;
+        height: 300px;
+    }
     
+}
+
+@media(max-width:990px)and (min-width:730px){
+    .navbar {
+       justify-content: space-between;
+    }
+
+ .nav-bot {
+     width: 100%;
+     position: absolute;
+     height: 50px;
+     left: 0;
+     top: 13%;
+ }
+ .nav-bot ul {
+     width: 100%;
+     justify-content: center;
+ }
+ .nav-bot img {
+     width: 20px;
+ }
+ .navbar .logo {
+     width: 30%;
+ }
+ .nav-login {
+     width: 24%;
+ }
+ .nav-login  {
+    font-size: 15px;
+ }
+
+.nav-bot li {
+    width: max-content;
+    font-size: 14px;
+}
+.header-title h1 {
+    font-size: 19px;
+}
+.header-title h2 {
+    font-size: 18px;
+}
+.header-title button {
+    font-size: 14px;
+}
+.first-con img {
+    width: 45%;
+}
+.vijegi div {
+    width: 45%;
+    margin: 2.5%;
+}
+.plans {
+    width: 100%;
+    margin: 30px 0px;
+}
+.plans a {
+    width: 30%;
+}
+.plans a h1 {
+    font-size: 17px;
+}
+.nav-bot li hr {
+    bottom: -28%;
+  }
+  .step-1 {
+      width: 60%;
+      right: -30%;
+  }
+  .step-2{
+    width: 68%;
+    right:18%;
+    top: 72%;
+}
+.step-3 {
+    width: 60%;
+    right: 70%;
+}
+.steps circle {
+    width:195px;
+    height: 195px;
+}
+.steps circle img {
+    width: 110%;
+}
+.steps circle {
+    border: 15px solid #66a6ff;
+    margin-top: 15%;
+}
+
 }
