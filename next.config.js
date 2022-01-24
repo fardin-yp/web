@@ -1,3 +1,4 @@
+
 const securityHeaders = [
   {
     key: 'X-Content-Type-Options',

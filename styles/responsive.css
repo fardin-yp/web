@@ -1,8 +1,64 @@
-@media(max-width:729px){
+@media(max-width:599px){
     .nav-bot {
         width: 35%;
         align-items: center;
         justify-content: flex-end;
+    }
+    .reset-card{
+        width:92%;
+    }
+    #admin-back {
+        display: block;
+    }
+    .menu {
+        background-color: white;
+        z-index: 150;
+    }
+    .open-menu{
+        visibility: hidden;
+        opacity: 0;
+        transform: translate(100%);
+        z-index: 15;
+    }
+    .plans a {
+        width: 94%;
+        height: 300px;
+        padding: 0;
+    }  
+    .products form {
+        width: 90%;
+        margin-top: -10px;
+    }
+    .products input {
+        width: 85%;
+    }
+    .products textarea {
+        width: 85%;
+    }
+    .products select {
+        width:85%;
+    }
+    .products form button {
+        width: 80%;
+    }
+    .Admin-rout {
+        width:100% ;
+        margin-right: 0px;
+    }
+    #dashboard-1 div {
+        width: 45%;
+        margin-top: 10px;
+    }
+    .err-card {
+        width: 94%;
+        margin-bottom: 0;
+        height: 520px;
+    }
+    .err-card img {
+        width: 100%;
+    }
+    .err-card p {
+        font-size: 20px;
     }
     .header-title button {
         margin-right: 0px;
@@ -31,64 +87,82 @@
         margin-top: 20px;
     }
     .first-con {
-      flex-flow: column-reverse;
-      justify-content: space-around;
-      align-items: center;
-    }
-    .first-con img {
-        width: 70%;
-        margin-top: -10%;
-        height: 50%;
-    }
-    .header-title {
-        width: 90%;
-        height: 50%;
-        align-items: center;
-        justify-content: space-evenly;
-    }
-    .header-title h1 {
-        font-size: 22px;
-        margin-right: 0;
-    }
-    .header-title h2 {
-        font-size: 18px;
-        margin-right: 0px;
-    }
-    .header-title a {
-        margin-right: 0;
+        height: 540px;
+      }
+      .first-con img {
+          width:98%;
+          height: 76%;
+          margin-top: -15px;
+      }
+      .first-con label {
+          width: 100%;
+          margin: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+      .header-title {
+          width: 95%;
+          height: 230px;
+          margin: 0;
+          position: absolute;
+          top:47%;
+          right:2.5%;
+          align-items: center;
+      }
+      .header-title a {
+         position: relative;
+         right: 0%;
+         font-size: 13px;
+      }
+      .header-title div{
+          width: 100%;
+      }
+      .header-title h1 {
+          font-size: 18px;
+          margin: 20px 0;
+      }
+      .header-title h2 {
+          margin: 20px 0;
+          font-size: 16px;
+      }
+      .second-con {
+          margin-top: 0px;
+      }
+    .vijegi {
+        flex-flow: column;
     }
     .vijegi  div{
-        width: 75%;
+        width: 90%;
     }
     .plans {
         flex-flow: column;
+        margin-bottom: 15px;
     }
-
     .web-left {
-        width:100%;
-        height:60%;
-        clip-path: none;
         display: none;
     }
-
     .web-design {
         flex-flow: column-reverse;
+        height: 100%;
     }
-
     .web-right {
         width:95%;
         display: flex;
         flex-flow: column;
         align-items: center;
     }
-
     .web-right h1 {
         margin-right: 0px;
+        font-size: 20px;
+    }
+    .web-design p {
+        font-size: 14px;
+        line-height: 1.5rem;
     }
     .web-right p {
         margin-right: 0px;
     }
-
     .contact {
         flex-flow: column;
         min-height: 350px;
@@ -105,13 +179,12 @@
     .q-place {
         height: fit-content;
         width: 90%;
-        margin-top: 10px;
+        margin-top: 70px;
     }
     .q-box {
         width: 100%;
         margin-top: 2%;
     }
-
     .second-con {
         margin-top: 40px;
     }
@@ -125,14 +198,11 @@
         margin-top: 40px;
     }
     .sixth-con {
-        margin-top: 40px;
+        margin-top: 30px;
     }
     .steps circle {
-        width: 30vh;
-        height: 30vh;
         display: none;
     }
-
     .step-1 {
         width: 80%;
         height: 30%;
@@ -162,9 +232,52 @@
         align-items: center;
         justify-content: space-evenly;
     }
-    .shop-con div {
+    .ex {
+        flex-flow: column;
+        width: 100%;
+        margin-top: 80px;
+        margin-bottom: 20px;
+    }
+    .ex-6 {
+        width:100%;
+    }
+    .ex-info {
+        width:92%;
+        text-align: center;
+        align-items: center;
+    }
+    .ex-6 label {
+        margin-top: 150px;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .ex-info h1 {
+        font-size: 28px;
+    }
+    .ex-6 img {
+        width: 70%;
+        height: 90%;
+        border-radius: 10px;
+    }
+    .ex-6 label circle {
+        top: 0%;
+        width: 100%;
+        height: 90%;
+        border-radius: 0%;
+        left: 0;
+        top: 0;
+    }
+    .ex-6 label circle:nth-child(2) {
         width: 90%;
+        border-radius: 10px;
+        left: 5%;
+        height: 100%;
+        top: 0;
+    }
+    .shop-con a {
+        width: 100%;
         height: auto;
+        margin-top: 25px;
     }
     .shop-con div h1 {
         font-size: 25px;
@@ -185,37 +298,43 @@
     .ex {
         flex-flow: column;
         width: 100%;
+        margin-bottom: 80px;
     }
     .ex-steps div h1 {
         height: 20px;
     }
-    .ex div {
-        width: 98%;
-        align-items: center;
-        text-align: center;
-    }
+
     .ex img {
         width: 80%;
     }
     .exclusive form {
-        width: 95%;
+        width: 92%;;
         flex-flow: column;
         align-items: center;
         justify-content: space-evenly;
-        height: 580px;
+        padding: 2%;
     }
-    .exclusive form input{
+    .exclusive .div-input {
         width: 80%;
     }
-    .exclusive form textarea{
-        width: 80%;
-    }
+    .exclusive form button {
+        margin-top: 10px;
+        width: 55%;
+        padding: 10px 25px;
+    } 
     .exclusive form h1 {
         height: 20px;
+        margin-bottom: 50px;
     }
-    .exclusive form button{
-      width: 45%;
-      padding: 2%;
+    .exclusive label {
+        justify-content: center;
+    }
+    .exclusive-offers div h1 {
+        font-size: 20px;
+    }
+    .exclusive-offers div p {
+        font-size: 14px;
+        line-height: 40px;
     }
     .head-con h1{
         font-size: 22px;
@@ -235,11 +354,13 @@
         flex-wrap: wrap;
         height: 100%;
     }
+    .seo-steps div {
+        width: 100%;
+    }
     .seo-steps div div {
-        width: 46%;
-        height: 230px;
+        width: 46.5%;
+        height: 250px;
         text-align: center;
-        margin-top: 5%;
     }
     .seo-steps div div h1{
         font-size: 20px;
@@ -297,7 +418,7 @@
     }
     .articles a {
         width: 100%;
-        margin-top: 20px;
+        margin-top: 15px;
     }
     .article-paginate {
         width:85%;
@@ -306,102 +427,1001 @@
     .article-paginate a {
         padding: 4% 5%;
     }
-    .article-search input {
-        width: 60%;
-        padding: 2%;
+    .article-search {
+        width: 90%;
+        margin-right: 5%;
     }
-    .plans a {
+    .article-search form {
         width: 100%;
-        height: 300px;
+    } 
+    .head-order fieldset {
+        width: 95%;
+        height: 100%;
+        margin-right: 2.5%;
+        font-size: 13px;
     }
-    
+    .order-ex table {
+        width: 95%;
+        margin-top: 10px;
+        font-size: 13px;
+    }
+    .open-slider {
+        display: block;
+    }
+    .slider {
+        display: block;
+    }
+    .backdrop{
+        display: block;
+    }
+    .index {
+        width: 100%;
+        flex-flow: column;
+        margin-top: 100px;
+    }
+    .index img {
+        width: 95%;
+        margin: auto;
+    }
+    .index div {
+        width: 92%;
+        align-items: center;
+    }
+    .index div h1 {
+        margin: 5% 0%;
+    }
+    .property {
+        width: 100%;
+    }
+    .props {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+    .props img {
+        margin: 0;
+        width: 90%;
+    }
+    .props h1 {
+        font-size: 26px;
+    }
+    .selling {
+        flex-wrap: wrap;
+        height: 100%;
+        padding: 20px;
+        font-size: 14px;
+    }
+    .selling div{
+        width: 48%;
+    }
+    .full-article {
+        width: 95%;
+    }
+    .login form{
+        width:90%;
+    }
+    .Admin-Chat{
+        z-index: 1;
+        width: 95%;
+    }
+    .about {
+        flex-flow: column;
+        height: 100%;
+    }
+    .about-us {
+        width: 100%;
+    }
+    .namad {
+        width: 100%;
+        margin: 28px 0px;
+    }
+    .top-con {
+        margin: 30px -5px;
+    }
+    .secc-comment {
+        width: 90%;
+    }
+    .secc-comment h1 {
+        font-size: 15px;
+    }
+    .property div img {
+        width: 90%;
+    }
+    .property div p {
+        width: 90%;
+        justify-content: center;
+        margin: 25px 5%;
+    }
+    .property div h2 {
+        width: 90%;
+        margin-right: 5%;
+    }
+    .hole-comment {
+        width:90%;
+    }
+    .mess {
+        width: 100%;
+    }
+    .mess a {
+        margin-right: 85%;
+    }
+    .order-web h1 {
+        font-size: 19.2px;
+    }
+    .order-web form{
+        width: 92%;
+    }
+    .forget-card{
+        width:90%;
+        flex-flow: column-reverse;
+        height: 80%;
+        
+    }
+    .forget-right{
+        width: 100%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0px;
+    }
+    .forget-left{
+      width: 100%;
+    }
+    .route {
+        width: 94%;
+        margin: 12px auto;
+    }
+    .contact form button {
+        margin: -10px 0px 10px 0%;
+        width: 30%;
+    }
+    .contact {
+     height: 100%;
+    }
+    .contact form input{
+       margin-top: 15px;
+       width: 80%;
+    }
+    .contact form div b {
+        margin-left:0%;
+        margin: 10px auto;
+    }
+    .contact form div {
+        flex-flow: column;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 15px;
+        width: 100%;
+    }
+    #dashboard-2 {
+        margin-top: 50px;
+    }
+    #dashboard-2 div {
+        width: 100%;
+    }
+    #dashboard-2 div circle {
+        width: 200px;
+        height: 200px;
+    }
 }
+@media(max-width:800.9px)and (min-width:599px){
 
-@media(max-width:990px)and (min-width:730px){
+    .shop-con a {
+        width: 242px;
+        height: 280px;
+    }
+    #admin-back {
+        display: block;
+    }
+    .contact form button {
+        margin: -10px 0px 10px 0%;
+        width: 220px;
+    }
+    .contact {
+     height: 100%;
+    }
+    .contact form input{
+       margin-top: 15px;
+       width: 499px;
+    }
+    .contact form div b {
+        margin-left:0%;
+        margin: 10px auto;
+    }
+    .contact form div {
+        flex-flow: column;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 15px;
+        width: 100%;
+    }
+    .shop-con {
+        justify-content: space-evenly;
+    }
+    .secc-comment {
+        width: 580px;
+    }
+    .secc-comment h1 {
+        font-size: 18px;
+    }
+    .err-card {
+        width: 550px;
+    }
+    .err-card img {
+        width: 100%;
+    }
     .navbar {
        justify-content: space-between;
     }
+    .slider {
+        display: block;
+    }
+    .backdrop {
+        display: block;
+    }
+    .open-slider{
+        display: block;
+    }
+    .nav-login {
+        display: none;
+    }
+    .nav-bot ul {
+        display: none;
+    }
+    .nav-bot a {
+        display: none;
+    }
+    .humburger {
+        display: flex;
+    }
+    .nav-bot {
+        width: 35%;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .vijegi {
+        flex-flow: column;
+    }
+    .vijegi div {
+        width: 460px;
+        padding-bottom: 10px;
+    }
+    .vijegi div img {
+        height: 65%;
+    }
+    .web-left {
+        display: none;
+    }
+    .web-design {
+        flex-flow: column-reverse;
+        height: 100%;
+    }
+    .web-right {
+        width:95%;
+        display: flex;
+        flex-flow: column;
+        padding-bottom: 20px;
+        align-items: center;
+    }
+    .web-right h1 {
+        margin-right: 0px;
+        font-size: 24px;
+        margin-bottom: 5px;
+    }
+    .web-design p {
+        font-size: 15px;
+        line-height: 1.5rem;
+        margin-right: 0;
+    }
+    .web-right p {
+        margin-right: 0px;
+    }
+    .steps circle {
+        display: none;
+    }
+    .steps p {
+        margin-top: -15px;
+        margin-right: 5%;
+    }
+    .step-1 {
+        width: 570px;
+        height: 30%;
+        position: relative;
+        top: 0;
+        right: 0; 
+    }
+    .step-2 {
+        width: 570px;
+        height: 30%;
+        border-radius: 10px;
+        position: relative;
+        right:0%;
+        top: 0%;  
+    }
+    .step-3 {
+        width:570px;
+        height: 30%;
+        position: relative;
+        right:0%;
+        top: 0%;
+    }
+    .steps {
+        width: 100%;
+        padding-bottom: 0vh;
+        flex-flow: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .contact {
+        flex-flow: column;
+        min-height: 350px;
+    }
+    .contact div {
+        width: 90%;
+        align-items: center;
+    }
+    .contact form {
+        width: 100%;
+        align-items: center;
+    }
+    .q-place {
+        height: fit-content;
+        width:570px;
+        margin-top: 10px;
+    }
+    .q-box {
+        width: 100%;
+        margin-top: 2%;
+    }
+    .contact-us {
+        flex-flow: column-reverse;
+        height: 100%;
+        
+    }
+    .contact-us div {
+        width: 100%;
+        margin-top: 20px;
+    }
+    .contact-us form {
+        width: 100%;
+        height: 450px;
+        align-items: center;
+        margin-left: 0%;
+    }
+    .about-seo {
+        flex-flow: column;
+        height: 100%;
+    }
+    .about-seo div {
+        width: 90%;
+        text-align: center;
+    }
+    .about-seo img {
+        width:400px;
+    }
+    .seo-steps {
+        flex-wrap: wrap;
+        height: 100%;
+    }
+    .seo-steps div div {
+        width: 46%;
+        height: 230px;
+        text-align: center;
+        margin-top: 5%;
+    }
+    .seo-steps div div h1{
+        font-size: 20px;
+        height: max-content;
+    }
+    .seo-steps p {
+        margin-right: 0%;
+    }
+    .seo-steps h1 {
+        font-size: 25px;
+        height:55px;
+        margin-bottom: 10px;
+    }
+    #mazaya {
+        flex-flow: column;
+    }
+    .seo-plans div {
+        width: 550px;
+        flex-flow: column;
+        align-items: center;
+        height: 100%;
+    }
+    .seo-plans div div{
+        width: 90%;
+        margin-top: 20px;
+    }
+    .maqalat {
+        flex-flow: column;
+        width: 550px;
+    }
+    .maqalat a {
+        width: 80%;
+        height: 370px;
+        margin-top: 10px;
+    }
+    .articles a {
+        width: 290px;
+    }
+    .ex-steps {
+        width: 100%;
+        height: max-content;
+    }
+    .ex-steps div {
+        width: 47%;
+        margin-top: 2%;
+    }
+    .ex-steps h1 {
+        font-size: 25px;
+        height:55px;
+        margin-bottom: 10px;
+    }
+    .ex-steps div h1 {
+        height: 20px;
+    }
+    .ex-steps div{
+        width: 280px;
+    }
+    .exclusive form {
+        width: 550px;
+        flex-flow: column;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 2%;
+    }
+    .exclusive .div-input {
+        width: 80%;
+    }
+    .exclusive form button {
+        margin-top: 10px;
+        width: 55%;
+        padding: 10px 25px;
+    }
+    .head-order fieldset {
+        width: 95%;
+        height: 100%;
+        margin-right: 2.5%;
+        font-size: 13px;
+    }
+    .order-ex table {
+        width: 95%;
+        margin-top: 10px;
+        font-size: 13px;
+    }
+    .index {
+        width: 100%;
+        flex-flow: column;
+        margin-top: 90px;
+    }
+    .index img {
+        width: 590px;
+    }
+    .index div {
+        width: 590px;
+    }
+    .index div h1 {
+        margin: 5% 0%;
+    }
+    .property {
+        width: 100%;
+    }
+    .selling {
+        flex-wrap: wrap;
+        height: 100%;
+        padding: 20px;
+        font-size: 14px;
+    }
+    .selling div{
+        width:280px;
+    }
+    .index div h1 {
+        margin: 3% 0%;
+    }
+    .selling {
+        font-size: 14px;
+    }
+    .full-article {
+        width: 590px;
+    }
+    .login form{
+        width:480px;
+    }
+    .menu {
+        background-color: beige;
+    }
+    .open-menu{
+        visibility: hidden;
+        opacity: 0;
+        transform: translate(100%);
+    }
+    .products form {
+        width: 90%;
+        margin-top: -10px;
+    }
+    .products form button {
+        width: 80%;
+    }
+    .products input {
+        width: 85%;
+    }
+    .products textarea {
+        width: 85%;
+    }
+    .products select {
+        width: 85%;
+    }
+    .Admin-rout {
+        width:100% ;
+        margin-right: 0px;
+    }
+    #dashboard-1 div {
+        width: 45%;
+        margin-top: 10px;
+    }
+    .Admin-Chat {
+        width: 600px;
+    }
+    .about {
+        flex-flow: column;
+        height: 100%;
+    }
+    .about-us {
+        width: 100%;
+    }
+    .namad {
+        width: 100%;
+        margin: 28px 0px;
+    }
+    .top-con {
+        margin: 30px -5px;
+    }
+    .top-footer {
+        width: 90%;
+        flex-flow: column;
+    }
+    .bot-footer {
+        width: 90%;
+    }
+    .top-footer img {
+        width: 22px;
+    }
+    .property div p {
+        width: 590px;
+        margin: 25px auto;
+    }
+    .property h2 {
+        width: 580px;
+        margin: 20px auto;
+    }
+    .hole-comment {
+        width:580px;
+    }
+    .property div img {
+        width: 590px;
+    }
+    .hole-comment {
+        width:590px;
+    }
+    .mess {
+        width: 100%;
+    }
+    .mess a {
+        margin-right: 88%;
+    }
+    .order-web h1 {
+        font-size: 23px;
+    }
+    .order-web form{
+        width: 550px;
+    }
+    .forget-card{
+        width:590px;
+    }
+    .forget-card input {
+        width: 80%;
+    }
+    .forget-card button {
+        width: 80%;
+    }
+    .article-search {
+        width: 585px;
+        margin: 10px auto;
+    }
+    .article-search form {
+        width: 60%;
+    }
+    .first-con label {
+        width: 790px;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+    .first-con {
+      height: 550px;
+    }
+    .first-con img {
+        width:98%;
+        height: 80%;
+        margin-top: -15px;
+    }
+    .header-title {
+        width: 90%;
+        height: 250px;
+        margin: 0;
+        position: absolute;
+        top:47%;
+        right:5%;
+        align-items: center;
+    }
+    .header-title a {
+       position: relative;
+       right: 0%;
+       font-size: 16px;
+    }
+    .header-title div{
+        width: 100%;
+    }
+    .header-title h1 {
+        font-size: 20px;
+        margin: 20px 0;
+    }
+    .header-title h2 {
+        margin: 20px 0;
+        font-size: 18px;
+    }
+    .second-con {
+        margin-top: 10px;
+    }
+    .plans {
+        width: 100%;
+        margin-right: 0;
+    }
+    .plans a {
+        margin: 10px 10px;
+    }
+    .ex {
+        flex-flow: column;
+        width: 100%;
+        margin-top: 80px;
+        margin-bottom: 20px;
+    }
+    .ex-6 {
+        width:100%;
+    }
+    .ex-info {
+        width:85%;
+        text-align: center;
+        align-items: center;
+    }
+    .ex-6 label {
+        margin-top: 150px;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .ex-6 img {
+        width: 70%;
+        height: 90%;
+        border-radius: 10px;
+    }
+    .ex-info label {
+        justify-content: center;
+    }
+    .ex-6 label circle {
+        top: 0%;
+        width: 100%;
+        height: 90%;
+        border-radius: 0%;
+        left: 0;
+        top: 0;
+    }
+    .ex-6 label circle:nth-child(2) {
+        width: 90%;
+        border-radius: 10px;
+        left: 5%;
+        height: 100%;
+        top: 0;
+    }
+
+
+}
+@media(max-width:1000px)and (min-width:800px){
+    .secc-comment {
+        width: 750px;
+    }
 
  .nav-bot {
-     width: 100%;
-     position: absolute;
-     height: 50px;
-     left: 0;
-     top: 13%;
+    width: 700px;
  }
- .nav-bot ul {
-     width: 100%;
-     justify-content: center;
- }
- .nav-bot img {
-     width: 20px;
- }
- .navbar .logo {
-     width: 30%;
+ .nav-bot ul li a{
+    font-size: 12px;
  }
  .nav-login {
-     width: 24%;
+     width: 15%;
  }
- .nav-login  {
-    font-size: 15px;
+ .logo{
+     width: 15%;
  }
-
-.nav-bot li {
-    width: max-content;
-    font-size: 14px;
+ .first-con label {
+    width: 790px;
 }
-.header-title h1 {
-    font-size: 19px;
+.header-title {
+    width: 75%;
+    right: -2%;
 }
-.header-title h2 {
-    font-size: 18px;
+.header-title a {
+   position: relative;
+   right: 7%;
 }
-.header-title button {
-    font-size: 14px;
+ .vijegi div {
+     width: 500px;
+     margin: 3% 1%;
+ }
+ .vijegi p {
+     font-size: 13px;
+ }
+ .vijegi div img {
+     height: 55%;
+ }
+ .steps circle {
+    width: 205px;
+    height: 205px;
+    border:14px solid #66a6ff;
 }
-.first-con img {
-    width: 45%;
+.step-1 {
+    width: 280px;
+    right: -150px;
 }
-.vijegi div {
-    width: 45%;
-    margin: 2.5%;
-}
-.plans {
-    width: 100%;
-    margin: 30px 0px;
-}
-.plans a {
-    width: 30%;
-}
-.plans a h1 {
-    font-size: 17px;
-}
-.nav-bot li hr {
-    bottom: -28%;
-  }
-  .step-1 {
-      width: 60%;
-      right: -30%;
-  }
-  .step-2{
-    width: 68%;
-    right:18%;
-    top: 72%;
+.step-2 {
+    width: 340px;
+    right:85px;
+    top: 67%;
 }
 .step-3 {
+    width: 280px;
+    right: 73%;
+}
+.about-seo div {
+    width: 350px;
+}
+.about-seo img {
+    width: 370px;
+}
+.seo-steps div {
+    width: 100%;
+    height: 100%;
+}
+.seo-steps div div {
+    width: 265px;
+    height: 280px;
+    text-align: center;
+    margin-top: 20px;
+}
+.seo-steps p {
+    width: 90%;
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 0.6;
+    margin-right: 0;
+}
+.maqalat {
+    width: 798px;
+}
+.maqalat a {
+    width: 32%;
+    height: 370px;
+    margin-top: 10px;
+}
+.seo-plans div div{
+    width: 45%;
+}
+.contact-us {
+    flex-flow: column-reverse;
+    height: 100%;
+}
+.contact-us div {
+    width: 680px;
+    margin-top: 20px;
+}
+.contact-us form {
+    width: 680px;
+    height: 450px;
+    align-items: center;
+    margin-left: 0%;
+}
+.exclusive form {
+    width:750px;
+}
+.q-place {
+    width: 90%;
+}
+.index {
+    width: 100%;
+    flex-flow: column;
+    margin-top: 90px;
+}
+.index img {
+    width: 700px;
+}
+.index div {
+    width: 700px;
+}
+.index div h1 {
+    margin: 3% 0%;
+}
+.full-article {
+    width: 750px;
+}
+.products form {
+    width: 500px;
+}
+.Admin-rout {
+    width:700px ;
+    margin-right: 300px;
+}
+.Admin-Chat {
+    width: 480px;
+}
+.err-card {
+    width: 750px;
+}
+.property {
+    width: 100%;
+}
+.property div p {
+    width: 780px;
+    margin: 25px auto;
+}
+.property h2 {
+    width: 780px;
+    margin: 20px auto;
+}
+.hole-comment {
+    width:750px;
+}
+.property div h4 img {
+    width: 750px;
+}
+.forget-card{
+    width:780px;
+}
+.article-search {
+    width: 785px;
+}
+.ex-6 {
+    width: 370px;
+}
+.ex-info {
+    width: 370px;
+}
+.ex-6 img {
+    width: 100%;
+    height: 400px;
+}
+.ex-6 label circle {
+    top: 0%;
+}
+.ex-info h1 {
+    font-size: 29px;
+}
+.ex-info p {
+    font-size: 14px;
+}
+}
+@media(max-width:1280px)and (min-width:1000px){
+.first-con {
+    justify-content: center;
+}
+.header-title {
+    width: 540px;
+}
+.first-con label {
+    width: 940px;
+}
+.header-title {
+    width: 65%;
+    right: -2%;
+}
+ .first-con button {
+     padding: 2% 5%;
+     font-size: 19px;
+     margin-right: 0;
+ }
+ .steps circle {
+    width: 250px;
+    height: 250px;
+}
+.step-1 {
+    width: 350px;
+    right: -190px;
+}
+.step-2 {
+    width: 350px;
+    right:140px;
+}
+.step-3 {
+    width: 350px;
+}
+.articles a {
+    width: 300px;
+}
+.seo-plans div div{
+    width: 300px;
+    margin: 20px 10px;
+}
+.seo-steps div {
+  width: 100%;
+}
+.ex-steps div{
+    width: 220px;
+}
+.exclusive form {
+    width:850px;
+}
+.q-place {
+    width: 90%;
+}
+.index {
+    width: 100%;
+}
+.index img {
+    width: 480px;
+}
+.index div {
+    width: 480px;
+}
+.products form {
+    width: 700px;
+}
+.Admin-rout {
+    width:900px ;
+    margin-right: 300px;
+}
+.Admin-Chat {
+    width: 680px;
+}
+.err-card {
+    width: 900px;
+}
+.property {
+    width: 100%;
+}
+.property div p {
+    width: 900px;
+    margin: 25px auto;
+}
+.property h2 {
+    width: 900px;
+    margin: 20px auto;
+}
+.shop-con a {
+    width: 260px;
+    height: 320px;
+}
+.article-search {
+    width: 90%;
+    margin-right: 5%;
+}
+.article-search {
+    width: 980px;
+    margin: 10px auto;
+}
+.article-search form {
     width: 60%;
-    right: 70%;
 }
-.steps circle {
-    width:195px;
-    height: 195px;
+.ex-6 {
+    width: 480px;
 }
-.steps circle img {
-    width: 110%;
+.ex-info {
+    width: 450px;
 }
-.steps circle {
-    border: 15px solid #66a6ff;
-    margin-top: 15%;
+.ex-info h1 {
+    font-size: 28px;
+}
+.ex-info p {
+    font-size: 14px;
 }
 
 }

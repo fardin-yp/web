@@ -1,49 +1,58 @@
 import Navbar from "../../components/navbar/navbar";
-import Footer from '../../components/footer/footer'
+import Footer from '../../components/footer/footer';
+import LiveChat from '../../components/liveChat/liveChat';
+import NoPost from '../../components/NoPost/NoPost';
+import Head from 'next/head';
 
-const index = () => {
+export async function getStaticProps() {
+
+  const loggedIn = await fetch("http://localhost:27017/allRoutes/real-state",{method:'GET'});
+  const logged = await loggedIn.json();
+  
+  const resSeo = await fetch('http://localhost:27017/allRoutes/Seo/company');
+  const jsonSeo = await resSeo.json();
+
+  return {
+     props: {
+       posts:logged 
+       ,jsonSeo
+      }
+  }
+}  
+
+const index = ({posts ,jsonSeo}) => {
     return (
         <div className="layout">
+
+<Head>
+   <link rel="icon" href="/art.png" />
+    <title>{jsonSeo && jsonSeo[0].title}</title>
+    <meta name="description" content={jsonSeo && jsonSeo[0].description} />
+    <meta name="keywords" content={jsonSeo && jsonSeo[0].keywords} />
+    <meta property="og:site_name" content="دریم وب"/>
+    <meta property="og:title" content={jsonSeo && jsonSeo[0].title} />
+    <meta property="og:description" content={jsonSeo && jsonSeo[0].description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:url" content={jsonSeo && jsonSeo[0].ogUrl} />
+    <meta name="og:type" content={jsonSeo && jsonSeo[0].ogType}/>
+    <meta property="og:locale" content="Fa_IR" /> 
+  </Head>
+          <LiveChat />
             <Navbar />
             <div style={{background:"linear-gradient(90deg, #3c3b3f 0%, #605c3c 100%)"}}  className="route">
               <h1>وبسایت های شرکتی</h1>
             </div>
-             
+            {posts.findPost.length === 0 && <NoPost name={"شرکتی"} background={"linear-gradient(90deg, #3c3b3f 0%, #605c3c 100%)"} />}
               <div className="shop">
                 <div className="shop-con">
-                  <a href="/fb/yhwtriuhwtr">
-                      <img src="/uploads/web-image.jpg" />
-                      <h1>فروشاه زرین پارس</h1>
-                      <p>قیمت 2,500,000 هزار تومان</p>
-                  </a>
-                  <a>
-                      <img src="/uploads/web-image.jpg" />
-                      <h1>فروشاه زرین پارس</h1>
-                      <p>قیمت 2,500,000 هزار تومان</p>
-                  </a>
-                  <a>
-                      <img src="/uploads/web-image.jpg" />
-                      <h1>فروشاه زرین پارس</h1>
-                      <p>قیمت 2,500,000 هزار تومان</p>
-                  </a>
-                  <a>
-                      <img src="/uploads/web-image.jpg" />
-                      <h1>فروشاه زرین پارس</h1>
-                      <p>قیمت 2,500,000 هزار تومان</p>
-                  </a>
-                  <a>
-                      <img src="/uploads/web-image.jpg" />
-                      <h1>فروشاه زرین پارس</h1>
-                      <p>قیمت 2,500,000 هزار تومان</p>
-                  </a>
+                {posts && posts.findPost.map(res => {
+                  return <a href={`/fb/${res.name}`} key={res._id}>
+                    <img src={`/uploads/${res.image}`} />
+                    <h1>خرید وبسایت شرکتی  {res.name}</h1>
+                    <p>قیمت {res.price} هزار تومان</p>
+                   </a>
+                  })}
                 </div>
-                <div style={{margin:"0px",marginTop:"50px"}} className="article-paginate">
-                <a style={{background:"RGBA(13,32,64,0.99)",color:"white"}}>1</a>
-                <a>2</a>
-                <a>3</a>
-                <a>...</a>
-                <a>15</a>
-            </div>
               </div>
             <Footer />
         </div>

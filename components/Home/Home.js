@@ -1,30 +1,66 @@
 import Navbar from "../navbar/navbar";
 import Footer from "../footer/footer";
 import Image from 'next/image'
-import { useState ,useRef } from "react";
+import { useState ,useRef, useEffect } from "react";
+import LiveChat from "../liveChat/liveChat";
+import axios from "axios";
+import ReCAPTCHA from 'react-google-recaptcha';
 
 
-const Home = () => {
-
-    const scroll = useRef(null)
+const Home = ({json ,articles ,Questions}) => {
  
-    const [questions ,SetQuestions] = useState(1)
+    const [questions ,SetQuestions] = useState('');
+    const [name , setName] = useState("");
+    const [number , setNumber ] = useState("");
+    const [errMessage ,setErrMessage] = useState("");
+    const [loading ,setLoading ]= useState(false);
+    const reRef = useRef('');
 
-    const scrollDown = () => window.scrollTo({top:scroll.current.offsetTop ,behavior:"smooth"})
+    const sendConsulting = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        const captcha = await reRef.current.executeAsync();
+        reRef.current.reset()
+
+    const post = {number ,name ,captcha}
+    await axios.post('http://localhost:27017/allRoutes/consulting' ,post).then(res => {
+    if(res.data.errMessage){
+    setErrMessage(res.data.errMessage)
+    setLoading(false)
+    }
+    setLoading(false)        
+})
+    }
+    useEffect(() => {
+       SetQuestions(Questions[0]._id)
+    },[Questions])
 
     return (
         <div className="layout">
             <Navbar />
-                <div className="home" >
-                    <div className="first-con">
-                      <div className="header-title">
-                          <h1>همین الان کسب و کار اینترنتی خودت رو راه اندازی کن!</h1>
-                          <h2>با کمترین هزینه یه موفقیت آنلاین روتجربه کن</h2>
-                          <button onClick={scrollDown} style={{cursor:"pointer"}}>شروع!</button>
-                       </div>
-                      <img src={'/uploads/1image.png'} />
-                    </div>
-                    <div className="second-con">
+                <div className="home" > 
+                <LiveChat />
+                <div className="first-con" >
+                   <label>
+                   <img  src="/images/Web-Designers.jpeg" alt="" />
+                <div className="header-title">
+
+                  <h1>همین الان کسب و کار اینترنتی خودت رو راه اندازی کن!</h1>
+                   <h2>با کمترین هزینه یه موفقیت آنلاین روتجربه کن </h2>
+                <div>
+                <a href="#third-con">خرید سایت آماده</a>
+                <a href="/exclusive-website" style={{backgroundColor:"#273f5b"}}>خرید سایت اختصاصی</a>
+                </div>
+
+                </div>
+                   </label>
+                      {/* <img src={'/uploads/2image.png'} /> */}
+
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 340">
+                          <path fill="#f4faf4" fill-opacity="1" d="M0,256L120,229.3C240,203,480,149,720,138.7C960,128,1200,160,1320,176L1440,192L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path>
+                    </svg>
+                <div className="second-con">
                         <div className="head-con">
                             <div className="line" /><h1> ویژگی ها  </h1><div className="line" id="line-2"/>
                         </div>
@@ -44,7 +80,7 @@ const Home = () => {
                                     <img  src="/uploads/main.png" alt="responsive png"  />
                                     <h1>پشتیبانی فنی</h1>
                                     <p> پشتیبانی رایگان 1 ماهه بی قیدو شرط برای خریداران به وسیله مجرب ترین تیم پشتیبانی.</p>
-                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="web-design">
@@ -60,7 +96,7 @@ const Home = () => {
                        </div>
                     </div>
 
-                    <div ref={scroll} id="third-con">
+                    <div id="third-con">
                         <div className="head-con">
                             <div className="line" /><h1> خرید سایت  </h1><div className="line" />
                         </div>
@@ -131,9 +167,22 @@ const Home = () => {
                           <p>شما میتوانید در صورت نیاز به مشاوره نام و شماره تماس خود را برای ما ارسال کرده تا مشاورین ما با شما تماس حاصل کنند.</p>
                       </div>
                       <form>
-                          <input placeholder="نام و نام خانوادگی" />
-                          <input placeholder="شماره تلفن همراه" />
-                          <button>ارسال</button>
+                          <input placeholder="نام و نام خانوادگی" onChange={(e) => setName(e.target.value)} />
+                          <input placeholder="شماره تلفن همراه" onChange={(e) => setNumber(e.target.value)} />
+                        <div style={{width:"100%"}}>
+                        {errMessage && <b style={{border:"2px solid #fe0000",fontSize:"12px",padding:"10px" ,borderRadius:"10px" ,background:"white" ,color:"black"}}>
+                            <img style={{width:"20px",height:"20px",margin:"-5px 5px"}} src="/images/warning (1).png" alt=""/>
+                            {errMessage}
+                        </b>}
+                        <ReCAPTCHA 
+                           style={{zIndex:"30",opacity:"0",visibility:"hidden"}}
+                           size="invisible"
+                           sitekey={json}
+                           ref={reRef}
+                           />
+                            <button style={{cursor:"pointer"}} disabled={loading} onClick={sendConsulting}> 
+                            {loading && <div style={{height:"20px" ,width:"20px",top:"25%"}} className='loading-spinner'></div>}ارسال</button>
+                            </div>
                       </form>
                     </div>
 
@@ -142,51 +191,36 @@ const Home = () => {
                             <div className="line" /><h1>  سوالات متداول  </h1><div className="line" />
                         </div>
                        <div className="q-place">
-                       <div style={questions ===1  ?{background:"#66a6ff" ,transition: "0.4s ease"} :null} className="q-box" onClick={() => SetQuestions(1)}>
-                       <h1>برای ساخت وبسایت از چه زبان هایی استفاده میشود؟</h1>
-                            <div><p style={questions !==1  ?{display:"none"} :null}>  در وبسایت های  ما از جاوااسکریپت , پی اچ پی و نود استفاده میشود</p></div>
-                       </div>
-                       <div style={questions ===2  ?{background:"#66a6ff" ,transition: "0.4s ease"} :null} className="q-box" onClick={() => SetQuestions(2)}>
-                       <h1>برای ساخت وبسایت از چه زبان هایی استفاده میشود؟</h1>
-                            <div><p style={questions !==2  ?{display:"none"} :null}>  در وبسایت های  ما از جاوااسکریپت , پی اچ پی و نود استفاده میشود</p></div>
-                       </div>
-                       <div style={questions ===3  ?{background:"#66a6ff" ,transition: "0.4s ease"} :null} className="q-box" onClick={() => SetQuestions(3)}>
-                       <h1>برای ساخت وبسایت از چه زبان هایی استفاده میشود؟</h1>
-                            <div><p style={questions !==3  ?{display:"none"} :null}>  در وبسایت های  ما از جاوااسکریپت , پی اچ پی و نود استفاده میشود</p></div>
-                       </div>
-                       <div style={questions ===4  ?{background:"#66a6ff" ,transition: "0.4s ease"} :null} className="q-box" onClick={() => SetQuestions(4)}>
-                       <h1>برای ساخت وبسایت از چه زبان هایی استفاده میشود؟</h1>
-                            <div><p style={questions !==4  ?{display:"none"} :null}>  در وبسایت های  ما از جاوااسکریپت , پی اچ پی و نود استفاده میشود</p></div>
-                       </div>
-                       <div style={questions ===5  ?{background:"#66a6ff" ,transition: "0.4s ease"} :null} className="q-box" onClick={() => SetQuestions(5)}>
-                       <h1>برای ساخت وبسایت از چه زبان هایی استفاده میشود؟</h1>
-                            <div><p style={questions !==5  ?{display:"none"} :null}>  در وبسایت های  ما از جاوااسکریپت , پی اچ پی و نود استفاده میشود</p></div>
-                       </div>
-                       <div style={questions ===6 ?{background:"#66a6ff" ,transition: "0.4s ease"} :null} className="q-box" onClick={() => SetQuestions(6)}>
-                       <h1>برای ساخت وبسایت از چه زبان هایی استفاده میشود؟</h1>
-                            <div><p style={questions !==6  ?{display:"none"} :null}>  در وبسایت های  ما از جاوااسکریپت , پی اچ پی و نود استفاده میشود</p></div>
-                       </div>
-
+                           {Questions && Questions.map(res => {
+                               return <div 
+                               key={res._id}  
+                               className="q-box" 
+                               onClick={() => questions === res._id ? SetQuestions("null") : SetQuestions(res._id)}>
+                               <h1>{res.question}</h1>
+                                    <div><p style={questions !== res._id  ?{display:"none"} :null}>{res.answer}</p></div>
+                               </div>
+                           })}
+      
                        </div>
                     </div>
 
-                    <div className="sixth-con">
+                <div className="sixth-con">
                         <div className="head-con">
                             <div className="line" /><h1> مقالات </h1><div className="line" />
                         </div>
                 <div className="maqalat">
-                <a>
-                  <img src="/uploads/seo-article.jpg" />
-                  <h1>سئو و کاربرد آن</h1>
-              </a>
-              <a>
-                  <img src="/uploads/seo-article.jpg" />
-                  <h1>سئو و کاربرد آن</h1>
-              </a>
-              <a>
-                  <img src="/uploads/seo-article.jpg" />
-                  <h1>سئو و کاربرد آن</h1>
-              </a>
+                    {articles && articles.slice(0,3).map(res => {
+                        return <a key={res._id} href={`/articles/${res._id}`}>
+                            <img src={`/uploads/${res.image}`} />
+                            <div>
+                              <h1>{res.title}</h1>
+                              <label>
+                              <div><img src={"/uploads/conversation.png"} />دیدگاه:{res.comments.length}</div>
+                              <div><img src={"/uploads/calendar.png"} />{res.timestamp}</div>
+                              </label>
+                            </div>
+                        </a>
+                    })}
                  </div>
             </div>
 

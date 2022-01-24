@@ -7,6 +7,7 @@ class MyDocument extends Document {
       <Html dir="rtl" lang="fa-IR">
         <Head>
         <link rel="preload" as="font" />
+        <script src="[ckeditor-build-path]/ckeditor.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet" />
         </Head>
         <body>
